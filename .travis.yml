@@ -3,12 +3,17 @@ language: ruby
 rvm:
   - 2.1
   - 2.2.3
+  - 2.3.1
+  - ruby-head
 
 gemfile:
   - Gemfile.rails42
   - Gemfile.rails50
 
 matrix:
+  fast_finish: true
+  allow_failures:
+    - rvm: ruby-head
   exclude:
     - rvm: 2.1
       gemfile: Gemfile.rails50
